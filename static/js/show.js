@@ -313,7 +313,7 @@ function showprojects() {
 
 
                     <!-- JS Finish TASK MODAL CARD -->
-                    <div class="modal" id="">
+                    <div class="modal" id='${projectInfo.projectFinishProgressModal}'>
                       <div class="modal-background"></div>
                         <div  class="modal-card">
                           <header class="modal-card-head">
