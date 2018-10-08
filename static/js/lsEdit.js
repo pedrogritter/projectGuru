@@ -133,3 +133,4 @@ createProject("Cactus","Raul","21-05-18","21-05-18","Some kind of project");
 createTask("Cactus", "Clean wine cellar", "Jimenez", "21-05-18","21-05-18", "Sweep, Mop and Dance");
 createTask("Cactus", "Call the electrician", "Juarez", "21-05-18","21-05-18", "Call to ShockLtd");
 createTask("Cactus", "Clean the gutter", "Jimenez", "21-05-18","21-05-18", "Kill all talking roaches");
+change_progress_status("In progress","Cactus", "Clean the gutter");
