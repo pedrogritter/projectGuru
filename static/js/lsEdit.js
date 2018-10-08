@@ -127,13 +127,9 @@ function deleteTask(taskname, projectname){
 
 
 createProject("Cactus","Raul","21-05-18","21-05-18","Some kind of project");
-createProject("OpalTapion","Mongol","21-05-18","21-05-18","Some kind of project");
-createProject("Vila Verde","Beneditta","21-05-18","21-05-18","Some kind of project");
 // console.log(storage);
 //
 //deleteProject("OpalTapion");
-createTask("OpalTapion", "Clean wine cellar", "Jimenez", "start","finish","Sweep, Mop and Spit");
-createTask("OpalTapion", "Clean  floor", "Rosita", "start","finish", "Sweep, Mop and Spit");
-createTask("OpalTapion", "Clean the gutter", "Jimenez", "start","finish", "Kill all talking roaches");
-createTask("Cactus", "Clean wine cellar", "Jimenez", "start","finish", "Sweep, Mop and Spit");
-createTask("Cactus", "Call some hoes", "Jimenez", "start","finish", "Sweep, Mop and Spit");
+createTask("Cactus", "Clean wine cellar", "Jimenez", "21-05-18","21-05-18", "Sweep, Mop and Dance");
+createTask("Cactus", "Call the electrician", "Juarez", "21-05-18","21-05-18", "Call to ShockLtd");
+createTask("Cactus", "Clean the gutter", "Jimenez", "21-05-18","21-05-18", "Kill all talking roaches");

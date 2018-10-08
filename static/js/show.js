@@ -169,7 +169,6 @@ function showprojects() {
                       <div class="card-content">
                         <div class="content">
                           ${project.description}
-                          <a href="#">@bulmaio</a>.
                           <br>
                           <b>Time Frame: </b>
                           <time datetime="2018-1-1">${project.start}</time> -
