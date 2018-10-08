@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Guru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="static/js/lsEdit.js"></script>
+    <script type="text/javascript" src="static/js/show.js"></script>
+
+    <!-- HERO SECTION -->
+      <section class="hero is-primary is-bold">
+       <div class="hero-body">
+         <div class="container">
+           <figure class="image is-128x128">
+             <img src="static/guru.png" alt="">
+           </figure>
+           <h1 class="title">
+              Project Guru
+           </h1>
+           <h2 class="subtitle">
+              {% block subtitle %}{% endblock %}
+           </h2>
+         </div>
+       </div>
+      </section>
+      <!-- NAVBAR SECTION -->
+      <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+
+                <a class="navbar-item">
+                  About
+                </a>
+              </div>
+            </div>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-success is-rounded"  onclick="toggleStuff('create_project_modal','is-active')">
+                  Start New Project
+                </a>
+                <a class="button is-danger is-rounded" onclick="toggleStuff('delete_project_modal','is-active')">
+                  Delete Project
+                </a>
+                <a class="button is-danger is-rounded is-outlined" onclick="clearAllProjects();showprojects()">
+                  Clear All
+                </a>
+              </div>
+            </div>
+          </div>
+      </nav>
+
+
+
+      <section class="section">
+        <!-- Project Modals -->
+        <div class="container" id="project_modals">
+          <!-- CREATE PROJECT MODAL -->
+          <div class="modal" id="create_project_modal">
+            <div class="modal-background"></div>
+              <div  class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Create task</p>
+                  <button class="delete" aria-label="close" onclick="toggleStuff('create_project_modal','is-active')"></button>
+                </header>
+                <section class="modal-card-body">
+                  <!-- Content ... -->
+                  <div class="field">
+                      <label class="label">Project Name</label>
+                      <div class="control">
+                        <input class="input" id="projectNameInput" type="text" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Manager</label>
+                    <div class="control">
+                      <input class="input" id="projectManagerInput" type="text" placeholder="Text input">
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Start</label>
+                    <div class="control">
+                      <input class="input" id="projectStartInput" type="date" placeholder="date input">
+                    </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">End</label>
+                      <div class="control">
+                        <input class="input" id="projectFinishInput" type="date" placeholder="date input">
+                      </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <textarea class="textarea" id="projectDescriptionInput" placeholder="Describe the context of your project"></textarea>
+                    </div>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                  <button class="button is-primary" onclick="createProject(getTextInputValue('projectNameInput'),getTextInputValue('projectManagerInput'),getTextInputValue('projectStartInput'),getTextInputValue('projectFinishInput'),getTextInputValue('projectDescriptionInput'));toggleStuff('create_project_modal','is-active');showprojects()">Submit</button>
+                  <button class="button" onclick="toggleStuff('create_project_modall','is-active')">Cancel</button>
+                </footer>
+                </div>
+            </div>
+
+            <!-- DELETE PROJECT MODAL CARD -->
+            <div class="modal" id="delete_project_modal">
+              <div class="modal-background"></div>
+                <div  class="modal-card">
+                  <header class="modal-card-head">
+                    <p class="modal-card-title">Delete Project</p>
+                    <button class="delete" aria-label="close" onclick="toggleStuff('delete_project_modal','is-active')"></button>
+                  </header>
+                  <section class="modal-card-body">
+                    <!-- Content ... -->
+                    <div class="field">
+                    <label class="label">Are you sure you want to delete?</label>
+                    <div class="control">
+                        <div class="select is-medium" id="delete_project_select_container">
+                        </div>
+                      </div>
+                    </div>
+
+                  </section>
+                  <footer class="modal-card-foot">
+                    <button class="button is-danger" onclick="deleteProject(getSelectValue('project_delete_select'));toggleStuff('delete_project_modal','is-active');showprojects()">Submit</button>
+                    <button class="button" onclick="toggleStuff('delete_project_modal','is-active')">Cancel</button>
+                  </footer>
+                  </div>
+              </div>
+        </div>
+        <div class="container" id="projectContainer">
+
+
+                      <!-- TEST CONTENT -->
+        </div>
+      </section>
+  </body>
+</html>
